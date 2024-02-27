@@ -1,4 +1,4 @@
-@vite('resources/css/app.css')
+@extends('layouts.app')
 <h1 class="text-center text-2xl py-4">LOGIN</h1>
 <form action="/login" method="post">
     @csrf
@@ -10,5 +10,6 @@
         <label for="password">Password:</label>
         <input name="password" id="password" type="password" class="border" />
     </div>
-    <button type="submit" class="border">Login</button>
+    <button type="submit" class="border p-2">Login</button>
+    <a href="{{ route('register') }}" class="border p-2">Create a new account</a>
 </form>
