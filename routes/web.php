@@ -17,8 +17,8 @@ use GuzzleHttp\Middleware;
 |
 */
 
+Route::get('/', [DashboardController::class, 'index'])->name('index');
 Route::middleware('guest')->group(function () {
-    Route::view('/', 'index')->name('login');
     Route::post('login', LoginController::class);
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
