@@ -17,16 +17,16 @@ use GuzzleHttp\Middleware;
 |
 */
 
-Route::view('/', 'index')->name('login');
+Route::middleware('guest')->group(function () {
+    Route::view('/', 'index')->name('login');
+    Route::post('login', LoginController::class);
+    Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    Route::post('register', [RegisterController::class, 'register']);
+});
 
-Route::post('login', LoginController::class)->middleware('guest');
-
-Route::get('dashboard', DashboardController::class, '__invoke')->name('dashboard')->middleware('auth');
-
-Route::get('logout', LogoutController::class);
-
-Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post')->middleware('auth');
-Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post')->middleware('auth');
-
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register']);
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', DashboardController::class)->name('dashboard');
+    Route::get('logout', LogoutController::class);
+    Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
+    Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
+});
