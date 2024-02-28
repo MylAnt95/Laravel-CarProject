@@ -40,4 +40,10 @@ class DashboardController extends Controller
     {
         return view('dashboard_create_post');
     }
+
+    public function index()
+    {
+        $posts = Post::get();
+        return view('index', ['posts' => $posts]);
+    }
 }

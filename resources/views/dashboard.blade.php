@@ -1,5 +1,3 @@
-@include('errors')
-
 <h1 class="text-2xl text-center">CAR FORUM</h1>
 
 @include('dashboard_create_post')
