@@ -30,9 +30,9 @@ Route::middleware('guest')->group(function () {
 // Authenticated users
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');
+    /* Route::get('index', DashboardController::class)->name('index'); */
     Route::get('logout', LogoutController::class);
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
     Route::delete('dashboard/delete-post/{post}', [DashboardController::class, 'deletePost'])->name('dashboard.delete-post');
 });
-
