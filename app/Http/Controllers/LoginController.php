@@ -20,7 +20,7 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/index');
+            return redirect('/');
         } else {
             return back()->withErrors(
                 [

@@ -12,7 +12,7 @@
             </div>
             <div class="mb-4">
                 <label for="car">Car</label>
-                <input type="text" name="car" id="car" class="border" required>
+                <input type="text" name="car_brand" id="car_brand" class="border" required>
             </div>
 
             <div class="mb-4">

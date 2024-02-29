@@ -18,6 +18,7 @@ use GuzzleHttp\Middleware;
 */
 
 Route::get('/', [DashboardController::class, 'index'])->name('index');
+Route::get('categories/{category}', [DashboardController::class, 'showCategory'])->name('categories_show');
 
 // Guest users
 Route::middleware('guest')->group(function () {
@@ -29,9 +30,8 @@ Route::middleware('guest')->group(function () {
 
 // Authenticated users
 Route::middleware('auth')->group(function () {
-    Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('logout', LogoutController::class);
+    Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
 });
-

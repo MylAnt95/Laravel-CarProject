@@ -20,6 +20,7 @@
                 {{-- User authentication links --}}
                 @guest
                     {{-- Show login and register links for guest users &  --}}
+                    <a href="/dashboard" class="border-r-2 pr-3 hover:opacity-50 hover:scale-105" href="">Forum</a>
                     <a class="border-r-2 pr-3 hover:opacity-50 hover:scale-105" href="/login">Login</a>
                     <a class="hover:opacity-50 hover:scale-105" href="/register">Register</a>
                 @endguest
