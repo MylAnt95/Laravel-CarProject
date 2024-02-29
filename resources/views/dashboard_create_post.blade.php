@@ -1,20 +1,26 @@
 @extends('layouts.app')
-
+@include('header')
 @section('content')
-    <h1>Create a Forum Post</h1>
+    <div class="text-center">
+        <h1 class="text-2xl">Create a Forum Post</h1>
 
-    <form action="{{ route('dashboard.store-post') }}" method="post">
-        @csrf
-        <div class="mb-4">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" class="border" required>
-        </div>
+        <form action="{{ route('dashboard.store-post') }}" method="post">
+            @csrf
+            <div class="mb-4">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" class="border" required>
+            </div>
+            <div class="mb-4">
+                <label for="car">Car</label>
+                <input type="text" name="car" id="car" class="border" required>
+            </div>
 
-        <div class="mb-4">
-            <label for="body">Body</label>
-            <textarea name="body" id="body" class="border" required></textarea>
-        </div>
+            <div class="mb-4">
+                <label for="body">Body</label>
+                <textarea name="body" id="body" class="border" required></textarea>
+            </div>
 
-        <button type="submit" class="border">Create Post</button>
-    </form>
+            <button type="submit" class="border">Create Post</button>
+        </form>
+    </div>
 @endsection

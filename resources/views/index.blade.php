@@ -3,7 +3,7 @@
 @include('header')
 <div class="flex gap-10 mx-10 my-4">
     <div class="w-96 h-fit sticky top-0">
-        <h2 class="text-2xl">Forum talk</h2>
+        <h2 class="text-2xl text-center">Forum talk</h2>
         @foreach ($posts as $post)
             <div class="border-2 my-4 p-2">
                 <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
@@ -12,11 +12,12 @@
             </div>
         @endforeach
     </div>
-    <div class="w-2/3">
-        <h2 class="text-2xl">News</h2>
+    <div class="w-1/3">
+        <h2 class="text-2xl text-center">News</h2>
         <div>
-            <h3 class="font-semibold">Cupra Terramar 2024: the most eagerly awaited SUV is about to arrive</h3>
-            <p>Here in the editorial office we know that there are plenty of new SUVs waiting to be unveiled in 2024,
+            <h3 class="font-bold">Cupra Terramar 2024: the most eagerly awaited SUV is about to arrive</h3>
+            <p class="overflow-auto max-h-52">Here in the editorial office we know that there are plenty of new SUVs
+                waiting to be unveiled in 2024,
                 but
                 the
                 most special one could well be the CUPRA Terramar. After all, it's likely to become the Spanish brand's
@@ -28,14 +29,15 @@
                 will
                 also
                 have rechargeable hybrid versions that will probably offer around a 60 miles of electric range.</p>
-            <a href="https://uk.motor1.com/news/709991/cupra-terramar-suv-2024-rendering/" class="underline">Read More by
+            <a href="https://uk.motor1.com/news/709991/cupra-terramar-suv-2024-rendering/" class="underline">Read More
+                by
                 clicking here</a>
             <img src={{ asset('images/cupra-terramar.jpg') }} alt="Cupra Terramar" class="w-80 rounded-lg" />
         </div>
         <div class="mt-4">
-            <h3 class="font-semibold">The Apple Car Is Reportedly Dead</h3>
-            <p>After a decade of work, the project has been killed, according to Bloomberg.</p>
-            <p>
+            <h3 class="font-bold">The Apple Car Is Reportedly Dead</h3>
+            <p class="overflow-auto max-h-52">After a decade of work, the project has been killed, according to
+                Bloomberg.
                 Apple has been working on its driverless car—Project Titan—for more than a decade. But now, the tech
                 giant
                 is officially calling it quits. According to Bloomberg, Apple has killed its electric car plans to focus
@@ -60,10 +62,11 @@
 
         </div>
         <div class="mt-4">
-            <h3 class="font-semibold">Toyota Built An Engine That Can Capture Carbon From The Air</h3>
-            <p>Toyota tested the air filter system on the hydrogen-burning engine found in its GR Corolla prototype.
-            </p>
-            <p>Toyota's noble effort to save the internal combustion engine is producing some interesting new
+            <h3 class="font-bold">Toyota Built An Engine That Can Capture Carbon From The Air</h3>
+            <p class="overflow-auto max-h-52">Toyota tested the air filter system on the hydrogen-burning engine found
+                in its GR Corolla prototype.
+
+                Toyota's noble effort to save the internal combustion engine is producing some interesting new
                 technology. The automaker has been testing a filter system that can actually capture carbon dioxide from
                 the atmosphere. But it has a long way to go before it's ready for mainstream production.
 

@@ -1,7 +1,6 @@
 @include('header')
 <h1 class="text-2xl text-center">CAR FORUM</h1>
 
-@include('dashboard_create_post')
 <h2 class="text-xl font-semibold">POSTS</h2>
 @foreach ($posts as $post)
     <div class="border-2 my-4">
