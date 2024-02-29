@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
 {
@@ -38,6 +39,7 @@ class DashboardController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $post->category_id = $category->id;
+        $post->date = now();
         $post->save();
 
         return redirect()->route('dashboard');
@@ -60,5 +62,12 @@ class DashboardController extends Controller
     {
         $posts = Post::get();
         return view('index', ['posts' => $posts]);
+    }
+
+    public function deletePost(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('dashboard');
     }
 }

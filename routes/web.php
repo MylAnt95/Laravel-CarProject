@@ -34,4 +34,5 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
+    Route::delete('dashboard/delete-post/{post}', [DashboardController::class, 'deletePost'])->name('dashboard.delete-post');
 });
