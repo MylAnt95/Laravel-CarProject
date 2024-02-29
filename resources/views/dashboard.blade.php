@@ -10,6 +10,8 @@
     @foreach ($posts as $post)
         <div class="border-2 my-4">
             <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
+            <a class="underline text-sm"
+            href="{{ route('categories_show', $post->category->id) }}">{{ $post->category->name }}</a>
             <p>{{ $post->body }}</p>
             <p class="italic text-sm">Written by {{ $post->user->name }}</p>
             <p class="italic text-sm">{{ $post->date }}</p>

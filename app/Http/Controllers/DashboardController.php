@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
@@ -22,15 +23,22 @@ class DashboardController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
-            'body' => 'required'
+            'car_brand' => 'required',
+            'body' => 'required',
         ]);
+
+        $category = Category::where('name', $request->car_brand)->first();
+        if (!$category) {
+            return redirect()->back()->withErrors(['car_brand' => 'Invalid car brand']);
+        }
 
         $post = new Post;
         $post->user_id = $request->user()->id;
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->category_id = $category->id;
         $post->date = now();
         $post->save();
 
@@ -40,7 +48,14 @@ class DashboardController extends Controller
 
     public function createPost()
     {
+        $categories = Category::all();
         return view('dashboard_create_post');
+    }
+
+    public function showCategory(Category $category)
+    {
+        $posts = $category->posts;
+        return view('categories_show', compact('posts', 'category'));
     }
 
     public function index()
