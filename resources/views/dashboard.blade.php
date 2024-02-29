@@ -1,3 +1,4 @@
+@include('header')
 <h1 class="text-2xl text-center">CAR FORUM</h1>
 
 @include('dashboard_create_post')
@@ -10,4 +11,5 @@
     </div>
 @endforeach
 
-<a href="/logout" class="relative bg-neutral-200 p-2 ">Logout</a>
+
+{{-- <a href="/logout" class="relative bg-neutral-200 p-2 ">Logout</a> --}}
