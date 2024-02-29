@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
 {
@@ -30,6 +31,7 @@ class DashboardController extends Controller
         $post->user_id = $request->user()->id;
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->date = now();
         $post->save();
 
         return redirect()->route('dashboard');
@@ -45,5 +47,12 @@ class DashboardController extends Controller
     {
         $posts = Post::get();
         return view('index', ['posts' => $posts]);
+    }
+
+    public function deletePost(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('dashboard');
     }
 }
