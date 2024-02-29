@@ -1,5 +1,6 @@
 @include('errors')
 @extends('layouts.app')
+@include('header')
 <div class="flex gap-10 mx-10 my-4">
     <div class="w-96 h-fit sticky top-0">
         <h2 class="text-2xl">Forum talk</h2>
