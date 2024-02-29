@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function __invoke(Request $request)
     {
         $user = Auth::user();
-        $posts = Post::where('user_id', $user->id)->get();
+        $posts = Post::get();
 
         return view('dashboard', ['user' => $user, 'posts' => $posts]);
     }
@@ -39,5 +39,11 @@ class DashboardController extends Controller
     public function createPost()
     {
         return view('dashboard_create_post');
+    }
+
+    public function index()
+    {
+        $posts = Post::get();
+        return view('index', ['posts' => $posts]);
     }
 }
