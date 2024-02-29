@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('header')
 <h2 class="text-2xl text-center">Register new account</h2>
 <form action="{{ route('register') }}" method="post" class="flex flex-col">
     @csrf

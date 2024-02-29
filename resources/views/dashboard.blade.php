@@ -1,4 +1,6 @@
 @include('errors')
+@include('header')
+
 <p>Hello {{ $user->name }}</p>
 
 @include('dashboard_create_post')
@@ -12,4 +14,4 @@
 @endforeach
 
 
-<a href="/logout" class="relative bg-neutral-200 p-2 ">Logout</a>
+{{-- <a href="/logout" class="relative bg-neutral-200 p-2 ">Logout</a> --}}

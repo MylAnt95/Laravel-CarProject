@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('header')
 <h1 class="text-center text-2xl py-4">LOGIN</h1>
 <form action="/login" method="post">
     @csrf
