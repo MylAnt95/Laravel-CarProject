@@ -9,6 +9,7 @@
                 <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
                 <p>{{ $post->body }}</p>
                 <p class="italic text-sm">Written by {{ $post->user->name }}</p>
+                <p class="italic text-sm">{{ $post->date }}</p>
             </div>
         @endforeach
     </div>
