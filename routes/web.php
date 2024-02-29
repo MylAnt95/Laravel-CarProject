@@ -18,15 +18,20 @@ use GuzzleHttp\Middleware;
 */
 
 Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+// Guest users
 Route::middleware('guest')->group(function () {
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', LoginController::class);
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
 });
 
+// Authenticated users
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('logout', LogoutController::class);
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
 });
+

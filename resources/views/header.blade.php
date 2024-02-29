@@ -16,7 +16,7 @@
                 {{-- User authentication links --}}
                 @guest
                     {{-- Show login and register links for guest users &  --}}
-                    <a class="border-r-2 pr-3 hover:opacity-50 hover:scale-105" href="{{-- TODO: Add link to start --}}">Login</a>
+                    <a class="border-r-2 pr-3 hover:opacity-50 hover:scale-105" href="/login">Login</a>
                     <a class="hover:opacity-50 hover:scale-105" href="/register">Register</a>
                 @endguest
                 @auth
