@@ -25,7 +25,8 @@
                     <a class="hover:opacity-50 hover:scale-105" href="/register">Register</a>
                 @endguest
                 @auth
-                    <a class="hover:opacity-50 hover:scale-105" href="/logout">Logout</a>
+                    <a class="hover:opacity-50 hover:scale-105 border-r-2 pr-3" href="/profile">Profile</a>
+                    <a class="hover:opacity-50 hover:scale-105 text-red-500 hover:text-red-400" href="/logout">Logout</a>
                 @endauth
             </div>
         </div>
