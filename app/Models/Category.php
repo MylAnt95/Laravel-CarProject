@@ -13,4 +13,8 @@ class Category extends Model
     {
         return $this->hasMany(Post::class);
     }
+    public static function createPosts()
+    {
+        return self::all();
+    }
 }

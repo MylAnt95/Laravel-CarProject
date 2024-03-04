@@ -17,6 +17,7 @@
     </div>
     <div class="w-2/3 border-l-2 px-10 border-gray-300 flex flex-column flex-wrap gap-10">
         <h2 class="text-2xl font-bold">News</h2>
+
             <div class="news-top flex flex-row">
                 <div class="mr-5">
                     <h3 class="font-bold">Cupra Terramar 2024: the most eagerly awaited SUV is about to arrive</h3>
@@ -50,8 +51,7 @@
                     is officially calling it quits. According to Bloomberg, Apple has killed its electric car plans to focus
                     on
                     generative artificial intelligence instead.
-    
-                    More than 2,000 employees assigned to the project were told Tuesday that it would be discontinued,
+                        More than 2,000 employees assigned to the project were told Tuesday that it would be discontinued,
                     unnamed
                     sources told Bloomberg. The announcement was reportedly made by Apple Chief Operating Officer Jeff
                     Williams
@@ -95,5 +95,6 @@
             <img src={{ asset('images/toyota-carbon-filter.webp') }} alt="Apple Logo" class="w-1/2 rounded-lg" />
         </div>
     </div>
+</div>
 
 </div>

@@ -48,8 +48,8 @@ class DashboardController extends Controller
 
     public function createPost()
     {
-        $categories = Category::all();
-        return view('dashboard_create_post');
+        $categories = Category::createPosts();
+        return view('dashboard_create_post', compact('categories'));
     }
 
     public function showCategory(Category $category)
