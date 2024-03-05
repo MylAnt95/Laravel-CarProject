@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PostController;
 use GuzzleHttp\Middleware;
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
     Route::delete('dashboard/delete-post/{post}', [DashboardController::class, 'deletePost'])->name('dashboard.delete-post');
+    Route::get('posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('posts/{post}', [PostController::class, 'update'])->name('posts.update');
 });

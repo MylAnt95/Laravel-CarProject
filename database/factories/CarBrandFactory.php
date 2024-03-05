@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class CategoryFactory extends Factory
+class CarBrandFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['Volvo', 'BMW', 'Mercedes', 'Saab', 'Volkswagen'])
+            'name' => $this->faker->unique()->randomElement(['Volvo', 'BMW', 'Mercedes', 'Saab', 'Volkswagen', 'Other'])
         ];
     }
 }

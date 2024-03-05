@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
-use App\Models\Category;
+use App\Models\CarBrand;
 use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
@@ -29,7 +29,7 @@ class DashboardController extends Controller
             'body' => 'required',
         ]);
 
-        $category = Category::where('name', $request->car_brand)->first();
+        $category = CarBrand::find($request->car_brand);
         if (!$category) {
             return redirect()->back()->withErrors(['car_brand' => 'Invalid car brand']);
         }
@@ -38,7 +38,7 @@ class DashboardController extends Controller
         $post->user_id = $request->user()->id;
         $post->title = $request->title;
         $post->body = $request->body;
-        $post->category_id = $category->id;
+        $post->car_brand_id = $category->id;
         $post->date = now();
         $post->save();
 
@@ -48,11 +48,11 @@ class DashboardController extends Controller
 
     public function createPost()
     {
-        $categories = Category::createPosts();
+        $categories = CarBrand::createPosts();
         return view('dashboard_create_post', compact('categories'));
     }
 
-    public function showCategory(Category $category)
+    public function showCategory(CarBrand $category)
     {
         $posts = $category->posts;
         return view('categories_show', compact('posts', 'category'));
