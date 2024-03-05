@@ -64,6 +64,13 @@ class DashboardController extends Controller
         return view('index', ['posts' => $posts]);
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+        $posts = auth()->user()->posts;
+        return view('profile', ['user' => $user, 'posts' => $posts]);
+    }
+
     public function deletePost(Post $post)
     {
         $post->delete();
