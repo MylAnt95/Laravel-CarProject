@@ -16,12 +16,6 @@
             <p class="italic text-sm">Written by {{ $post->user->name }}</p>
             <p class="italic text-sm">{{ $post->date }}</p>
         </div>
-
-        <form method="post" action="{{ route('dashboard.delete-post', $post) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Delete</button>
-        </form>
     @endforeach
 @endif
 
