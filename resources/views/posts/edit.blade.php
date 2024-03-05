@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('header')
 @section('content')
     <h1>Edit Post</h1>
 
@@ -11,7 +11,7 @@
             <label for="title">Title</label>
             <input type="text" id="title" name="title" value="{{ old('title', $post->title) }}" class="form-control">
         </div>
-
+        @include('posts.categories')
         <div class="form-group">
             <label for="body">Body</label>
             <textarea id="body" name="body" class="form-control">{{ old('body', $post->body) }}</textarea>

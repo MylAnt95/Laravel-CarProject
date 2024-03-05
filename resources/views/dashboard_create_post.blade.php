@@ -10,15 +10,7 @@
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" class="border" required>
             </div>
-            <div class="mb-4">
-                <label for="car">Brand</label>
-                <select name="car_brand" id="car_brand" class="border" required>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
+            @include('posts.categories')
             <div class="mb-4">
                 <label for="body">Body</label>
                 <textarea name="body" id="body" class="border" required></textarea>

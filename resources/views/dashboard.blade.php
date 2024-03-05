@@ -16,7 +16,9 @@
             <p class="italic text-sm">Written by {{ $post->user->name }}</p>
             <p class="italic text-sm">{{ $post->date }}</p>
         </div>
-
+        @if (Auth::id() === $post->user_id)
+            <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary">Edit</a>
+        @endif
         <form method="post" action="{{ route('dashboard.delete-post', $post) }}">
             @csrf
             @method('DELETE')
