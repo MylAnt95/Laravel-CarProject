@@ -3,7 +3,7 @@
 namespace Database\Factories;
 use App\Models\Post;
 use App\Models\User;
-use App\Models\Category;
+use App\Models\CarBrand;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'category_id' => Category::factory(),
+            'category_id' => CarBrand::factory(),
             'title' => $this->faker->sentence,
             'body' => $this->faker->paragraph,
         ];
