@@ -19,10 +19,5 @@
         @if (Auth::id() === $post->user_id)
             <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary">Edit</a>
         @endif
-        <form method="post" action="{{ route('dashboard.delete-post', $post) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Delete</button>
-        </form>
     @endforeach
 @endif

@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'category_id' => CarBrand::factory(),
+            'car_brand_id' => CarBrand::factory(),
             'title' => $this->faker->sentence,
             'body' => $this->faker->paragraph,
         ];
