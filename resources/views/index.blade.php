@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @include('header')
 <div class="flex justify-center">
-    <div class="w-96 h-fit sticky top-0 pr-10">
+    <div class="w-96 h-fit sticky top-0 pr-10 max-h-screen overflow-y-scroll">
         <h2 class="text-2xl font-bold">Forum talk</h2>
         @foreach ($posts as $post)
             <div class="chat-container bg-white rounded-3xl border-2 my-10 p-3">
@@ -15,13 +15,13 @@
             </div>
         @endforeach
     </div>
-    <div class="w-2/3 border-l-2 px-10 border-gray-300 flex flex-column flex-wrap gap-10">
+    <div class="w-2/3 border-l-2 pl-10 border-gray-300 flex flex-column flex-wrap gap-10 max-h-screen">
         <h2 class="text-2xl font-bold">News</h2>
 
             <div class="news-top flex flex-row">
-                <div class="mr-5">
+                <div class="mr-5 w-1/2">
                     <h3 class="font-bold">Cupra Terramar 2024: the most eagerly awaited SUV is about to arrive</h3>
-                    <p class="overflow-auto max-h-52">Here in the editorial office we know that there are plenty of new SUVs
+                    <p class="overflow-hidden max-h-52">Here in the editorial office we know that there are plenty of new SUVs
                         waiting to be unveiled in 2024,
                         but
                         the
@@ -38,13 +38,19 @@
                         by
                         clicking here</a>
                 </div>
-                <img src={{ asset('images/cupra-terramar.jpg') }} alt="Cupra Terramar" class="w-1/2 rounded-lg" />
+
+                <div class="img w-1/2">
+                    <img src={{ asset('images/cupra-terramar.jpg') }} alt="Cupra Terramar" class="rounded-lg" />
+                </div>
+                
             </div>
         <div class="news flex flex-row">
-            <img src={{ asset('images/apple-car.webp') }} alt="Apple Logo" class="w-1/2 rounded-lg" />
-            <div class="ml-5">
+            <div class="img w-1/2">
+                <img src={{ asset('images/apple-car.webp') }} alt="Apple Logo" class="rounded-lg" />
+            </div>
+            <div class="ml-5 w-1/2">
                 <h3 class="font-bold">The Apple Car Is Reportedly Dead</h3>
-                <p class="overflow-auto max-h-52">After a decade of work, the project has been killed, according to
+                <p class="overflow-hidden max-h-52">After a decade of work, the project has been killed, according to
                     Bloomberg.
                     Apple has been working on its driverless car—Project Titan—for more than a decade. But now, the tech
                     giant
@@ -69,9 +75,9 @@
             
         </div>
         <div class="news flex flex-row">           
-            <div class="mr-4">
+            <div class="mr-4 w-1/2">
                 <h3 class="font-bold">Toyota Built An Engine That Can Capture Carbon From The Air</h3>
-                <p class="overflow-auto max-h-52">Toyota tested the air filter system on the hydrogen-burning engine found
+                <p class="overflow-hidden max-h-52">Toyota tested the air filter system on the hydrogen-burning engine found
                     in its GR Corolla prototype.
     
                     Toyota's noble effort to save the internal combustion engine is producing some interesting new
@@ -92,7 +98,9 @@
                     here</a>
                     
             </div>
-            <img src={{ asset('images/toyota-carbon-filter.webp') }} alt="Apple Logo" class="w-1/2 rounded-lg" />
+            <div class="img w-1/2">
+                <img src={{ asset('images/toyota-carbon-filter.webp') }} alt="Apple Logo" class="rounded-lg" />
+            </div>
         </div>
     </div>
 </div>
