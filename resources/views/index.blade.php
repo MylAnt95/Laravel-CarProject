@@ -1,25 +1,37 @@
 @include('errors')
 @extends('layouts.app')
 @include('header')
-<div class="flex justify-center">
-    <div class="w-96 h-fit sticky top-0 pr-10 max-h-screen overflow-y-scroll">
-        <h2 class="text-2xl font-bold">Forum talk</h2>
-        @foreach ($posts as $post)
-            <div class="chat-container bg-white rounded-3xl border-2 my-10 p-3">
-                <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
-                <p class="py-3 text-sm border-t-2">{{ $post->body }}</p>
-                <div class="chat-bottom flex justify-between">
-                    <p class="italic text-xs text-gray-500">Written by {{ $post->user->name }}</p>
-                    <p class="italic text-xs text-gray-500">{{ $post->date }}</p>
+<div class="flex flex-col md:flex-row">
+    {{------------ Forum Talk ------------}}
+    <div class="flex flex-col max-h-[450px] md:max-h-none overflow-hidden md:justify-center">
+        <h2 class="text-2xl font-bold text-center md:text-start">Forum talk</h2>
+        <div class="md:w-96 md:h-fit md:sticky md:top-0 px-5 md:pr-10 md:max-h-screen md:overflow-y-scroll">
+            @foreach ($posts as $post)
+                <div class="chat-container bg-white rounded-3xl border-2 my-10 p-3">
+                    <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
+                    <p class="py-3 text-sm border-t-2">{{ $post->body }}</p>
+                    <div class="chat-bottom flex justify-between">
+                        <p class="italic text-xs text-gray-500">Written by {{ $post->user->name }}</p>
+                        <p class="italic text-xs text-gray-500">{{ $post->date }}</p>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
-    <div class="w-2/3 border-l-2 pl-10 border-gray-300 flex flex-column flex-wrap gap-10 max-h-screen">
-        <h2 class="text-2xl font-bold">News</h2>
-
-            <div class="news-top flex flex-row">
-                <div class="mr-5 w-1/2">
+    @guest
+    <a class="self-center py-3 md:hidden" href="/login">See more posts</a>
+    @endguest
+    @auth
+    <a class="self-center py-3 md:hidden" href="/forum">See more posts</a>
+    @endauth
+    <div class="Line md:hidden w-full h-0.5 bg-gray-300">
+    </div>
+    {{------------ News ------------}}
+    <div class="md:w-2/3 md:border-l-2 px-5 md:pl-10 border-gray-300 flex flex-column flex-wrap gap-20 md:gap-10 max-h-screen">
+        <h2 class="text-2xl font-bold hidden md:block">News</h2>
+        <div class="news-top flex flex-col md:flex-row border-b-2">
+            <h2 class="text-2xl font-bold text-center my-10 md:hidden">News</h2>
+                <div class="md:mr-5 md:w-1/2">
                     <h3 class="font-bold">Cupra Terramar 2024: the most eagerly awaited SUV is about to arrive</h3>
                     <p class="overflow-hidden max-h-52">Here in the editorial office we know that there are plenty of new SUVs
                         waiting to be unveiled in 2024,
@@ -39,16 +51,18 @@
                         clicking here</a>
                 </div>
 
-                <div class="img w-1/2">
+                <div class="img md:w-1/2">
                     <img src={{ asset('images/cupra-terramar.jpg') }} alt="Cupra Terramar" class="rounded-lg" />
                 </div>
                 
             </div>
-        <div class="news flex flex-row">
-            <div class="img w-1/2">
+            <div class="Line md:hidden w-full h-0.5 bg-gray-300">
+            </div>
+        <div class="news flex flex-col md:flex-row">
+            <div class="img md:w-1/2 order-2 md:order-1">
                 <img src={{ asset('images/apple-car.webp') }} alt="Apple Logo" class="rounded-lg" />
             </div>
-            <div class="ml-5 w-1/2">
+            <div class="md:ml-5 md:w-1/2 order-1 md:order-2">
                 <h3 class="font-bold">The Apple Car Is Reportedly Dead</h3>
                 <p class="overflow-hidden max-h-52">After a decade of work, the project has been killed, according to
                     Bloomberg.
@@ -74,8 +88,10 @@
             </div>
             
         </div>
-        <div class="news flex flex-row">           
-            <div class="mr-4 w-1/2">
+        <div class="Line md:hidden w-full h-0.5 bg-gray-300">
+            </div>
+        <div class="news flex flex-col md:flex-row">           
+            <div class="md:mr-4 md:w-1/2">
                 <h3 class="font-bold">Toyota Built An Engine That Can Capture Carbon From The Air</h3>
                 <p class="overflow-hidden max-h-52">Toyota tested the air filter system on the hydrogen-burning engine found
                     in its GR Corolla prototype.
@@ -98,7 +114,7 @@
                     here</a>
                     
             </div>
-            <div class="img w-1/2">
+            <div class="img md:w-1/2">
                 <img src={{ asset('images/toyota-carbon-filter.webp') }} alt="Apple Logo" class="rounded-lg" />
             </div>
         </div>
