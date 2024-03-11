@@ -3,7 +3,7 @@
 @include('header')
 <div class="flex flex-col md:flex-row mb-20 md:px-10">
     {{------------ Forum Talk ------------}}
-    <div class="flex flex-col max-h-[428px] md:max-h-full overflow-hidden md:overflow-visible px-5 md:px-0">
+    <div class="flex flex-col max-h-[428px] md:max-h-full overflow-y-scroll md:overflow-visible px-5 md:px-0">
         <h2 class="text-2xl font-bold text-center md:text-start mt-24 md:mt-0">Forum talk</h2>
         <div class="md:w-96 md:h-fit md:sticky md:top-0 md:pr-10 md:max-h-screen md:overflow-y-scroll">
             @foreach ($posts as $post)
@@ -26,7 +26,7 @@
     <a class="self-center py-3 md:hidden" href="/login">See more posts</a>
     @endguest
     @auth
-    <a class="self-center py-3 md:hidden" href="/forum">See more posts</a>
+    <a class="self-center py-3 md:hidden" href="/dashboard">See more posts</a>
     @endauth
     <div class="Line md:hidden w-full h-0.5 bg-gray-300">
     </div>
