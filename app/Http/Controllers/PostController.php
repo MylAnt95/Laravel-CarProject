@@ -34,15 +34,11 @@ class PostController extends Controller
 
         $category = CarBrand::find($request->car_brand);
 
-
         $post->title = $request->title;
         $post->body = $request->body;
         $post->car_brand_id = $category->id;
-
-
-
         $post->save();
 
-        return redirect()->route('dashboard', $post);
+        return redirect()->route('dashboard');
     }
 }
