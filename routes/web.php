@@ -27,12 +27,12 @@ Route::middleware('guest')->group(function () {
     Route::post('login', LoginController::class);
     Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RegisterController::class, 'register']);
+    Route::get('dashboard', DashboardController::class)->name('dashboard');
 });
 
 // Authenticated users
 Route::middleware('auth')->group(function () {
     Route::get('logout', LogoutController::class);
-    Route::get('dashboard', DashboardController::class)->name('dashboard');
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('dashboard/create-post', [DashboardController::class, 'createPost'])->name('dashboard.create-post');
     Route::post('dashboard/store-post', [DashboardController::class, 'store'])->name('dashboard.store-post');
