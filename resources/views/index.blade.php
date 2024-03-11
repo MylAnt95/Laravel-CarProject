@@ -1,14 +1,18 @@
 @include('errors')
 @extends('layouts.app')
 @include('header')
-<div class="flex flex-col md:flex-row mb-20">
+<div class="flex flex-col md:flex-row mb-20 md:px-10">
     {{------------ Forum Talk ------------}}
-    <div class="flex flex-col max-h-[428px] md:max-h-none overflow-hidden">
+    <div class="flex flex-col max-h-[428px] md:max-h-full overflow-hidden md:overflow-visible px-5 md:px-0">
         <h2 class="text-2xl font-bold text-center md:text-start mt-24 md:mt-0">Forum talk</h2>
-        <div class="md:w-96 md:h-fit md:sticky md:top-0 px-5 md:pr-10 md:max-h-screen md:overflow-y-scroll">
+        <div class="md:w-96 md:h-fit md:sticky md:top-0 md:pr-10 md:max-h-screen md:overflow-y-scroll">
             @foreach ($posts as $post)
                 <div class="chat-container bg-white rounded-3xl border-2 my-10 p-3">
-                    <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
+                    <div class="flex flex-row justify-between">
+                        <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
+                        <a class="underline text-sm self-center"
+                    href="{{ route('categories_show', $post->carBrand->id) }}">#{{ $post->carBrand->name }}</a>
+                    </div>
                     <p class="py-3 text-sm border-t-2">{{ $post->body }}</p>
                     <div class="chat-bottom flex justify-between">
                         <p class="italic text-xs text-gray-500">Written by {{ $post->user->name }}</p>
@@ -27,7 +31,7 @@
     <div class="Line md:hidden w-full h-0.5 bg-gray-300">
     </div>
     {{------------ News ------------}}
-    <div class="md:w-2/3 md:border-l-2 px-5 md:pl-10 border-gray-300 flex flex-column flex-wrap gap-20 md:gap-50">
+    <div class="md:w-2/3 md:border-l-2 pl-5 md:pl-10 px-5 md:px-0 border-gray-300 flex flex-column flex-wrap gap-20 md:gap-50">
         <h2 class="text-2xl font-bold hidden md:block">News</h2>
         <div class="news-top flex flex-col md:flex-row border-b-2">
             <h2 class="text-2xl font-bold text-center my-10 md:hidden">News</h2>
@@ -46,7 +50,7 @@
                         will
                         also
                         have rechargeable hybrid versions that will probably offer around a 60 miles of electric range.</p>
-                    <a href="https://uk.motor1.com/news/709991/cupra-terramar-suv-2024-rendering/" class="underline">Read More
+                    <a href="https://uk.motor1.com/news/709991/cupra-terramar-suv-2024-rendering/" class="underline text-blue-500">Read More
                         by
                         clicking here</a>
                 </div>
@@ -81,7 +85,7 @@
     
                     “Apple made the disclosure internally Tuesday, surprising the nearly 2,000 employees working on the
                     project,” the report says.</p>
-                <a href="https://www.motor1.com/news/710351/apple-car-dead/" class="underline">Read More by
+                <a href="https://www.motor1.com/news/710351/apple-car-dead/" class="underline text-blue-500">Read More by
                     clicking
                     here</a>
     
@@ -108,7 +112,7 @@
                     carbon to offset the average gasoline engine and needs to be constantly replaced. The race car only
                     filtered out about 20 grams of carbon dioxide over 20 laps, which isn't very much. For context, a
                     gasoline car can emit nearly 8,900 grams of CO2 per gallon consumed.</p>
-                <a href="https://www.motor1.com/news/710347/toyota-combustion-engine-filter-co2/" class="underline">Read
+                <a href="https://www.motor1.com/news/710347/toyota-combustion-engine-filter-co2/" class="underline text-blue-500">Read
                     More by
                     clicking
                     here</a>
