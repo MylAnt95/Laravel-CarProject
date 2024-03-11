@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <header>
-    <nav class="flex justify-between bg-white shadow-md mb-10">
+    <nav class="flex justify-between bg-white shadow-md mb-10 fixed w-full md:relative">
         <div class="w-full flex justify-between">
             <div class="nav-left px-4 py-2 text-black-800 font-bold flex flex-row">
                 <a class="self-center mr-1 w-full" href="/">
@@ -45,7 +45,7 @@
                     @endguest
                 </div>
             </div>
-            
+
             <div class="nav-right hidden md:flex flex-row gap-3 px-4 py-2 text-gray-800 self-center">
                 {{-- User authentication links --}}
                 @guest
