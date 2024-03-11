@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 @section('content')
-    <div class="text-center">
+    <div class="text-center h-full pt-24">
         <h1 class="text-2xl">Create a Forum Post</h1>
 
         <form action="{{ route('dashboard.store-post') }}" method="post">
