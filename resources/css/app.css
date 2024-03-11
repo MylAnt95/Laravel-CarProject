@@ -28,3 +28,35 @@ body {
 .origin-top-center {
     transform-origin: top center;
 }
+
+/* Form */
+
+.form {
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.form label {
+    font-size: 18px;
+}
+
+.form-input {
+    padding: 8px;
+    font-size: 16px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 4px;
+}
+
+.form-btn {
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 16px;
+    max-width: 80px;
+}
+
+.form-btn:hover {
+    color: rgb(0, 154, 23);
+    border: 1px solid rgb(0, 154, 23);
+    transform: scale(1.05);
+}
