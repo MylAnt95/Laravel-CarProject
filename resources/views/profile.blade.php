@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @include('header')
 
-<div class="h-full pt-24">
+<div class="h-full pt-10">
     <section class="profile flex justify-center">
         <div class="profile-container flex items-center justify-center flex-col">
             <div class="profile-img-container overflow-hidden border-2 shadow-lg border-black rounded-full w-40 h-40">
