@@ -14,7 +14,7 @@
         </div>
     </div>
 </section>
-<div class="line bg-gray-300 h-px w-full m-4"></div>
+<div class="line bg-gray-300 h-px w-full mt-4 mb-4"></div>
 <section class="user-posts flex justify-center">
     @if ($posts->isEmpty())
         <p>No posts available.</p>

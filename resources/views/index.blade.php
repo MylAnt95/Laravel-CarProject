@@ -3,7 +3,7 @@
 @include('header')
 <div class="flex flex-col md:flex-row">
     {{------------ Forum Talk ------------}}
-    <div class="flex flex-col max-h-[450px] md:max-h-none overflow-hidden md:justify-center">
+    <div class="flex flex-col max-h-[428px] md:max-h-none overflow-hidden md:justify-center">
         <h2 class="text-2xl font-bold text-center md:text-start">Forum talk</h2>
         <div class="md:w-96 md:h-fit md:sticky md:top-0 px-5 md:pr-10 md:max-h-screen md:overflow-y-scroll">
             @foreach ($posts as $post)
@@ -27,7 +27,7 @@
     <div class="Line md:hidden w-full h-0.5 bg-gray-300">
     </div>
     {{------------ News ------------}}
-    <div class="md:w-2/3 md:border-l-2 px-5 md:pl-10 border-gray-300 flex flex-column flex-wrap gap-20 md:gap-10 max-h-screen">
+    <div class="md:w-2/3 md:border-l-2 px-5 md:pl-10 border-gray-300 flex flex-column flex-wrap gap-20 md:gap-50 max-h-screen">
         <h2 class="text-2xl font-bold hidden md:block">News</h2>
         <div class="news-top flex flex-col md:flex-row border-b-2">
             <h2 class="text-2xl font-bold text-center my-10 md:hidden">News</h2>
