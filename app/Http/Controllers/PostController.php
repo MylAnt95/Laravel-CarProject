@@ -39,6 +39,6 @@ class PostController extends Controller
         $post->car_brand_id = $category->id;
         $post->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('pofile');
     }
 }

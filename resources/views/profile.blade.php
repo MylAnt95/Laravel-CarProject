@@ -15,27 +15,39 @@
         </div>
     </section>
     <div class="line bg-gray-300 h-px w-full mt-4 mb-4"></div>
-    <section class="user-posts flex justify-center">
+    <section class="user-posts flex justify-center mx-3 md:mx-10">   
         @if ($posts->isEmpty())
             <p>No posts available.</p>
         @else
+        <div class="posts mt-3 container grid grid-cols-1 gap-5 md:grid-cols-2">
             @foreach ($posts as $post)
-                <div class="border-2 my-4">
-                    <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
-                    <a class="underline text-sm"
-                        href="{{ route('categories_show', $post->CarBrand->id) }}">{{ $post->CarBrand->name }}</a>
-                    <p>{{ $post->body }}</p>
-                    <p class="italic text-sm">Written by {{ $post->user->name }}</p>
-                    <p class="italic text-sm">{{ $post->date }}</p>
+                <div class="chat-container bg-white rounded-3xl border-2 p-3">
+                    <div class="flex flex-row justify-between">
+                        <h2 class="text-lg font-semibold">{{ $post->title }}</h2>
+                        <a class="underline text-sm self-center ml-1"
+                    href="{{ route('categories_show', $post->carBrand->id) }}">#{{ $post->carBrand->name }}</a>
+                    </div>
+                    <p class="py-3 text-sm border-t-2">{{ $post->body }}</p>
+                    <div class="chat-bottom flex justify-between mt-auto">
+                        <p class="italic text-xs text-gray-500 self-end">{{ $post->date }}</p>
+                        <div class="edit-delete flex gap-4">
+                            @if (Auth::id() === $post->user_id)
+                                <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary delete-txt text-yellow-500 active:text-yellow-400 hover:text-yellow-400 hover:scale-105">Edit</a>
+                            @endif
+                            <form method="post" class="m-0" action="{{ route('dashboard.delete-post', $post) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-primary text-red-500 active:text-red-400 hover:text-red-400 hover:scale-105">Delete</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-    
-                <form method="post" action="{{ route('dashboard.delete-post', $post) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Delete</button>
-                </form>
-            @endforeach
-        @endif
-    </section>
-</div>
+                    {{-- @if (Auth::id() === $post->user_id)
+                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary">Edit</a>
+                    @endif --}}
+                @endforeach
+            @endif
+        </div>
+            </section>
+        </div>
 @include('footer')

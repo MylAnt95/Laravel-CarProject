@@ -4,7 +4,7 @@
     <div class="flex flex-col pt-20 px-5 md:px-24 md:pt-5">
         <h1 class="text-center text-2xl py-4">Create a Forum Post</h1>
 
-        <form action="{{ route('dashboard.store-post') }}" method="post" class="form md:w-2/3 md:self-center flex flex-col">
+        <form action="{{ route('dashboard.store-post') }}" method="post" class="form md:w-1/3 md:self-center flex flex-col">
             @csrf
             <div class="mb-4 flex flex-col">
                 <label for="title">Title</label>

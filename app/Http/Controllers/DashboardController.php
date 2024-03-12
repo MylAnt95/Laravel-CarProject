@@ -74,7 +74,6 @@ class DashboardController extends Controller
     public function deletePost(Post $post)
     {
         $post->delete();
-
-        return redirect()->route('dashboard');
+        return redirect()->route('profile');
     }
 }
