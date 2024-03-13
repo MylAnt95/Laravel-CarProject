@@ -1,6 +1,6 @@
 # CarForum
 
-![GIF](https://giphy.com/gifs/cars-event-arena-Pcv4mkn0nya76/giphy.gif)
+![GIF](https://giphy.com/gifs/cars-event-arena-Pcv4mkn0nya76#:~:text=embed%20this%20GIF-,on,-your%20website%20or)
 
 ## Project
 This is a forum site for car enthusiasts, you are able to post your own posts where you choose the carbrand it's about and also you are able to see other logged in persons posts. 
