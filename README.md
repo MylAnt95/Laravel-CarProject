@@ -28,6 +28,8 @@ In your terminal run the following commands:
 5. cp .env.example .env
 6. php artisan key:generate
 7. php artisan migrate
-8. npm run watch (to make sure to get live updates from tailwind to your frontend in artisan serve) 
-9. php artisan serve
-10. Go to link localhost:8000
+8. php artisan db:seed --class=CarBrandSeeder
+9. php artisan db:seed --class=PostsTableSeeder
+10. npm run watch (to make sure to get live updates from tailwind to your frontend in artisan serve) 
+11. php artisan serve
+12. Go to link localhost:8000
