@@ -31,7 +31,3 @@ In your terminal run the following commands:
 8. npm run watch (to make sure to get live updates from tailwind to your frontend in artisan serve) 
 9. php artisan serve
 10. Go to link localhost:8000
-## Project
-This is a forum site for car enthusiasts, you are able to post your own posts where you choose the carbrand it's about and also you are able to see other logged in persons posts. 
-In the profile page you are able to edit and delete your posts. 
-
