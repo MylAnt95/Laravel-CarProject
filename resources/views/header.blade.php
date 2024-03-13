@@ -11,32 +11,33 @@
             @auth
                 <div class="nav-mid hidden md:flex gap-3 px-4 py-2 self-center text-gray-800">
                     {{-- Navigation links for logged in users --}}
-                    <a href="/dashboard" class="hover:opacity-50 hover:scale-105">Forum</a>
+                    <a href="{{ route('dashboard') }}" class="hover:opacity-50 hover:scale-105">Forum</a>
                     <div class="line-separator bg-gray-200 h-auto w-0.5"></div>
-                    <a href="dashboard/create-post" class="hover:opacity-50 hover:scale-105">Create a post</a>
-                    <div class="line-separator bg-gray-200 h-auto w-0.5"></div>
-                    <a class="hover:opacity-50 hover:scale-105" href="">Lorem</a>
+                    <a href="{{ route('dashboard.create-post') }}" class="hover:opacity-50 hover:scale-105">Create a
+                        post</a>
                 </div>
             @endauth
 
-            {{-- Dropdown menu (mobile only)--}}
+            {{-- Dropdown menu (mobile only) --}}
             <div class="relative md:hidden">
                 <div class="">
                     <img class="hamburger" src={{ asset('images/hamburger.svg') }} alt="">
-                </div>    
-                <div class="drop-menu hidden w-full h-fit top-12 flex-col fixed inset-0 items-center justify-center bg-white shadow-lg z-10">
+                </div>
+                <div
+                    class="drop-menu hidden w-full h-fit top-12 flex-col fixed inset-0 items-center justify-center bg-white shadow-lg z-10">
 
                     {{-- Dropmenu links --}}
-                    <a href="/dashboard" class="block px-4 py-2 active:opacity-50">Forum</a>
+                    <a href="{{ route('dashboard') }}" class="block px-4 py-2 active:opacity-50">Forum</a>
                     @auth
-                        <a href="dashboard/create-post" class="block px-4 py-2 active:opacity-50">Create a post</a>
-                        <a class="block px-4 py-2 active:opacity-50" href="">Lorem</a>
+                        <a href="{{ route('dashboard.create-post') }}" class="block px-4 py-2 active:opacity-50">Create a
+                            post</a>
                     @endauth
                     <div class="Line md:hidden w-full h-0.5 bg-gray-300 mt-3 mb-3">
                     </div>
                     @auth
                         <a class="block px-4 py-2 active:opacity-50" href="/profile">Profile</a>
-                        <a class="block px-4 py-2 active:opacity-50 text-red-500 active:text-red-400" href="/logout">Logout</a>
+                        <a class="block px-4 py-2 active:opacity-50 text-red-500 active:text-red-400"
+                            href="/logout">Logout</a>
                     @endauth
                     @guest
                         {{-- Show login and register links for guest users in dropmenu --}}
